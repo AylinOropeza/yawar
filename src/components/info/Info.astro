@@ -1,0 +1,172 @@
+---
+import { Image } from "astro:assets";
+import image1 from "../../assets/images/1.webp";
+import image2 from "../../assets/images/2.webp";
+import image3 from "../../assets/images/3.webp";
+import r1 from "../../assets/images/r1.webp";
+import r2 from "../../assets/images/r2.webp";
+import r3 from "../../assets/images/r3.webp";
+import r4 from "../../assets/images/r4.webp";
+import r5 from "../../assets/images/r5.webp";
+import r6 from "../../assets/images/r6.png";
+import r9 from "../../assets/images/r9.png";
+import r10 from "../../assets/images/r10.png";
+import r11 from "../../assets/images/r11.png";
+
+const alternativas = [
+    { image: r1, text: "Esponja menstrual", imgSize: "h-60 w-60" },
+    { image: r2, text: "Disco menstrual", imgSize: "h-60 w-60" },
+    { image: r3, text: "Copa menstrual", imgSize: "h-40 w-40" },
+    { image: r4, text: "Calzon menstrual", imgSize: "h-52 w-52" },
+    { image: r5, text: "Toallas de tela", imgSize: "h-48 w-48" },
+]
+---
+<section class="flex h-full w-full justify-center py-20 bg-yawar-100">
+    <div class="flex flex-col justify-center align-middle w-2/3 gap-10 text-xl">
+        <div class="flex flex-col">
+            <span class="font-caveatbrush text-center text-3xl md:text-7xl text-yawar-500">CUIDADOS Y CONCEPTOS</span>
+            <span class="text-center font-bold text-2xl">GESTIÓN MENSTRUAL SOSTENIBLE</span>
+        </div>
+
+        <div class="max-w-sm w-full lg:max-w-full lg:flex rounded overflow-hidden shadow-lg">
+            <Image src={image1} alt="Cholita" class="h-72 w-72" />
+            <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-justify">
+                <div class="mb-8">
+                    <p>
+                        Los IGM deben responder a las necesidades de cada cuerpo y la cultura de la persona que los usa.
+                    </p>
+                    <p>
+                        ¿Sabías que las toallas desechables tienen químicos que son tóxicos para tu salud?...¿Alguna vez calculaste cuánto dinero representa comprar toallas a lo largo de tu vida cíclica?
+                    </p>
+                    <p>
+                        Estas miles de toallas tienen un alto costo económico y sin ellas, no podemos realizar nuestras actividades diarias como estudiar o trabajar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <span class="font-caveatbrush text-center text-4xl text-yawar-400">Te invitamos</span>
+            <p>
+                A buscar otras formas de gestionar tu menstruación que sea amigable con tu cuerpo, el medio ambiente y con tu economía. Te compartimos algunas opciones:
+            </p>
+            <div class="flex flex-wrap justify-center align-middle gap-4">
+                {alternativas.map(item => (
+                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                            <Image src={item.image} alt="Imagen" class={item.imgSize} />
+                            <div class="px-6 py-4">
+                                <div class="font-bold text-xl mb-2">{ item.text }</div>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </article>
+
+        <article class="flex flex-col justify-center gap-8">
+            <span class="text-center font-bold text-3xl text-yawar-500">Dignidad menstrual</span>
+            <p>
+                La dignidad menstrual es la vivencia plena e informada de nuestra ciclicidad menstrual. Se relaciona con el ejercicio de nuestros derechos humanos, sexuales y reproductivos ya que promueve el conocimiento de la ciclicidad como parte de nuestra salud integral.
+            </p>
+            <div class="flex flex-col xl:flex-row">
+                <Image src={image2} alt="fondo" class="h-72 w-auto" />
+                <div class="flex flex-col justify-center align-middle gap-4 m-8 text-justify">
+                    <p>
+                        La dignidad menstrual es vivir la ciclicidad desde la información y conocimiento de nuestros propios cuerpos, sin miedo, vergüenza, asco ni tabú.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div class="flex flex-col-reverse xl:flex-row justify-center align-middle gap-8">
+                <p class="w-4/5">
+                    Como sociedad tenemos la tarea de derribar el tabú y estigma menstrual que limitan la vivencia digna de nuestros derechos. Solo haciendo un cambio personal ante este tema, podremos impactar positivamente en nuestro entorno.
+                </p>
+                <span class="font-bold text-yawar-500 text-2xl w-full">
+                    LA DIGNIDAD MENSTRUAL ES UN ASUNTO DE TODAS LAS PERSONAS
+                </span>
+            </div>
+
+            <div class="flex flex-col-reverse xl:flex-row">
+                <div class="flex flex-col justify-center align-middle gap-4 mr-8 text-justify">
+                    <p>
+                        También se relaciona con el acceso a Insumos de Gestión Menstrual (IGM) adecuados a nuestras necesidades y cultura, así como el acceso a servicios básicos que nos permitan una saludable gestión menstrual.
+                    </p>
+                </div>
+                <Image src={image3} alt="fondo" class="h-64 w-auto" />
+            </div>
+        </article>
+
+        <article>
+            <div class="absolute left-0 right-0 h-[30vh] flex justify-center align-middle gap-8 bg-gradient-to-b from-yawar-300 to-yawar-100">
+                <div class="flex flex-col justify-center align-middle gap-4  font-bold">
+                    <span class="text-center text-4xl">ANATOMÍA</span>
+                    <span class="text-center text-3xl">¡CONOCERTE ES TU PODER!</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col xl:flex-row justify-between align-middle mt-[30vh] gap-4">
+                <div class="flex flex-col my-8 xl:w-1/3 justify-center">
+                    <span class="text-2xl text-yawar-500 font-bold">LA VULVA</span>
+                    <p>
+                        ES TODO LO QUE ESTÁ EN CONTACTO CON TU CALZÓN
+                    </p>
+                </div>
+                <Image src={r11} alt="recurso" class="h-80 w-auto" />
+            </div>
+
+            <div class="flex flex-col-reverse md:flex-row justify-between align-middle gap-4">
+                <Image src={r9} alt="recurso" class="h-80 w-auto" />
+                <div class="flex flex-col my-8 md:w-1/2 justify-center">
+                    <span class="text-2xl text-yawar-500 font-bold">TU ÚTERO</span>
+                    <p>
+                        ES TU SEGUNDO CORAZÓN, TIENE EL TAMAÑO DE TU PUÑO CERRADO
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between align-middle gap-4">
+                <div class="flex flex-col my-8 justify-center">
+                    <span class="text-2xl text-yawar-500 font-bold">VISTA LATERAL</span>
+                    <p>
+                        Lava tu vulva sólo con agua y amor, es mejor evitar cualquier tipo de jabón en esa zona.
+                    </p>
+                </div>
+                <Image src={r10} alt="recurso" class="h-80 w-auto" />
+            </div>
+        </article>
+
+        <article class="flex flex-col gap-8">
+            <div class="absolute left-0 right-0 h-[30vh] flex flex-col justify-center align-middle gap-4 bg-yawar-400 text-yawar-100">
+                <span class="text-center font-bold text-3xl">CICLICIDAD MENSTRUAL</span>
+                <p class="text-center text-2xl">
+                    ¿SABÍAS QUE EL EVENTO CENTRAL DEL CICLO MENSTRUAL ES LA OVULACIÓN?
+                </p>
+            </div>
+
+            <div class="flex flex-col justify-between align-middle mt-[40vh] gap-8">
+                <p>
+                    La ovulación (y por tanto la menstruación) son indicadores importantes de nuestro estado de salud ya que son la evidencia del correcto funcionamiento de nuestras hormonas en el cuerpo
+                </p>
+                <div class="flex flex-col lg:flex-row justify-between align-middle gap-4">
+                    <Image src={r6} alt="recurso" class="h-100 w-auto" />
+                    <div class="flex flex-col my-8 lg:w-1/3 justify-center">
+                        <span class="text-2xl text-yawar-500 font-bold">Las 4 fases menstruales que conforman nuestro ciclo:</span>
+                        <p>
+                            Fase folicular, fase ovulatoria, fase lútea o pre menstrual y fase menstrual, tienen un impacto directo en cómo se siente nuestro cuerpo físico, nuestra mente, nuestra energía y emociones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row justify-between align-middle gap-4">
+                    <p>
+                        Este es un ciclograma (el círculo con líneas) el día 1 de tu ciclo es cuando llega tu menstruación y el último será el día previo a tu siguiente menstruación. Anota tus estados de ánimo, tu energía física, tu concentración y si observas el cambio de tus flujos vaginales.
+                    </p>
+                    <p>
+                        Hazlo por 3 meses seguidos y podrás observar que existen patrones que se repiten!
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>

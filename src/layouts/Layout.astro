@@ -1,0 +1,67 @@
+---
+import Header from "../components/header/Header.astro";
+import {SITE} from "../utils/constants";
+import Footer from "../components/footer/Footer.astro";
+
+const { title = SITE.title, meta, structuredData, lang = "es" } = Astro.props;
+
+interface Props {
+	title?: string;
+	meta?: string;
+	structuredData?: object;
+	lang?: string;
+}
+---
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<script is:inline>
+			if (
+				localStorage.getItem("hs_theme") === "dark" ||
+				(!("hs_theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			) {
+				console.log("true", !("hs_theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+				document.documentElement.classList.add("dark");
+			} else {
+				console.log("false", !("hs_theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+				document.documentElement.classList.remove("dark");
+			}
+		</script>
+	</head>
+	<body class="bg-yawar-100 selection:bg-red-400 text-neutral-600 selection:text-neutral-700 font-raleway">
+		<main>
+			<Header />
+			<slot />
+			<Footer />
+		</main>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	:global(html) {
+		scroll-behavior: smooth;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* IE y Edge */
+	}
+</style>

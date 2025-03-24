@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import esStrings from "../../utils/navigation";
+import logo from "../../assets/logos/slogan/2.webp"
+
+const strings = esStrings;
+---
+<footer class="flex justify-between align-middle items-center bg-yawar-500 text-yawar-100 h-[30vh] px-4 md:px-10 lg:px-20">
+    <Image src={logo} alt="Yawar" class="h-32 md:h-40 w-auto" />
+    <div class="flex flex-col justify-center items-center gap-4">
+        <span class="font-bold md:text-xl">Nuestras redes sociales</span>
+        <div class="flex gap-8">
+            {strings.socialLinks.map(item => (
+                    <a href={item.url} target='_blank' aria-label='Facebook page'>
+                        <Image src={item.image} alt={item.name} class="h-10 w-auto" />
+                    </a>
+            ))}
+        </div>
+    </div>
+</footer>
